@@ -2,9 +2,13 @@
 #include <queue>
 using namespace std;
 
-void printQueue(queue<int> queue)
+void printQueue(queue<int> queueRef)
 {
-    
+    while (!queueRef.empty())
+    {
+        cout << queueRef.front() << " " << endl;
+        queueRef.pop();
+    }
 }
 
 int main()
@@ -14,12 +18,10 @@ int main()
     myQueue.push(2);
     myQueue.push(3);
 
-    myQueue.pop();
-
     cout << "Size of queue is: " << myQueue.size() << endl;
     cout << "First element of the queue is: " << myQueue.front() << endl;
     cout << "Last element of the queue is: " << myQueue.back() << endl;
 
-    cout << "myQueue" << endl;
+    cout << "My Queue is: " << endl;
     printQueue(myQueue);
 }
