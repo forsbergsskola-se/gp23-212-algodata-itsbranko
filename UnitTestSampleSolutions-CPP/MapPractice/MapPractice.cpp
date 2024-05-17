@@ -15,7 +15,7 @@ int main()
 
     for (auto pair : myDictionary)
     {
-        //map will always organize the list in the alphabetic order
+        //map will always organize the list in the alphabetic order (ascending order) - a,b,c,d ... 1,2,3,4
         cout << pair.first << " - " << pair.second << endl;
     }
 }
