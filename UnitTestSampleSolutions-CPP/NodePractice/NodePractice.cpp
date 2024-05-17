@@ -16,6 +16,31 @@ void printList(Node* node)
         node = node->next;
     }
 }
+void insertAtTheFront(Node** headAddress, int newValue)
+{
+    Node* newNode = new Node();
+    newNode->value = newValue;
+
+    newNode->next = *headAddress;
+
+    *headAddress = newNode;
+}
+void insertAtTheEnde(Node** headAddress, int newValue)
+{
+    Node* newNode = new Node();
+    newNode->value = newValue;
+    newNode->next = nullptr;
+
+    if (*headAddress == nullptr)
+        *headAddress = newNode;
+
+    Node* last = *headAddress;
+    while (last->next != nullptr)
+    {
+        last = last->next;
+    }
+    last->next = newNode;
+}
 
 int main()
 {
@@ -32,5 +57,7 @@ int main()
     third->value = 3;
     third->next = nullptr;
 
+    insertAtTheFront(&head, -1);
+    insertAtTheFront(&head, -2);
     printList(head);
 }
