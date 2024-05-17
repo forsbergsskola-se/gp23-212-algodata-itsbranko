@@ -16,6 +16,7 @@ void printList(Node* node)
         node = node->next;
     }
 }
+
 void insertAtTheFront(Node** headAddress, int newValue)
 {
     Node* newNode = new Node();
@@ -25,21 +26,42 @@ void insertAtTheFront(Node** headAddress, int newValue)
 
     *headAddress = newNode;
 }
-void insertAtTheEnde(Node** headAddress, int newValue)
+
+void insertAtTheEnd(Node** headAddress, int newValue)
 {
+    //prepare the new node
     Node* newNode = new Node();
     newNode->value = newValue;
     newNode->next = nullptr;
 
+    //if linked list is empty set newNode as head
     if (*headAddress == nullptr)
         *headAddress = newNode;
 
+    //find the last node in linked list
     Node* last = *headAddress;
     while (last->next != nullptr)
     {
         last = last->next;
     }
+
+    //insert at the end and set the newNode as the last node
     last->next = newNode;
+}
+
+void insertAfter(Node* previous, int newValue)
+{
+    //check if previous node is NULL
+    if (previous == nullptr)
+        cout << "Previous can NOT be NULL!" << endl;
+
+    //prepare new node
+    Node* newNode = new Node();
+    newNode->value = newValue;
+
+    //insert newNode after previous
+    newNode->next = previous->next;
+    previous->next = newNode;
 }
 
 int main()
@@ -59,5 +81,10 @@ int main()
 
     insertAtTheFront(&head, -1);
     insertAtTheFront(&head, -2);
+
+    insertAfter(head, 222);
+    
+    insertAtTheEnd(&head, 4);
+    insertAtTheEnd(&head, 5);
     printList(head);
 }
