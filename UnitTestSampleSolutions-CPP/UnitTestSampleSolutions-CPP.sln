@@ -12,6 +12,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QueuePractice", "QueuePract
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MapPractice", "MapPractice\MapPractice.vcxproj", "{17F8A49D-62D0-49CA-8D07-4EE09F012113}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AnotherMapPractice", "AnotherMapPractice\AnotherMapPractice.vcxproj", "{802012F1-3752-4815-B9CE-051D75EAD78A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{17F8A49D-62D0-49CA-8D07-4EE09F012113}.Debug|Any CPU.Build.0 = Debug|Win32
 		{17F8A49D-62D0-49CA-8D07-4EE09F012113}.Release|Any CPU.ActiveCfg = Release|Win32
 		{17F8A49D-62D0-49CA-8D07-4EE09F012113}.Release|Any CPU.Build.0 = Release|Win32
+		{802012F1-3752-4815-B9CE-051D75EAD78A}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{802012F1-3752-4815-B9CE-051D75EAD78A}.Debug|Any CPU.Build.0 = Debug|Win32
+		{802012F1-3752-4815-B9CE-051D75EAD78A}.Release|Any CPU.ActiveCfg = Release|Win32
+		{802012F1-3752-4815-B9CE-051D75EAD78A}.Release|Any CPU.Build.0 = Release|Win32
 	EndGlobalSection
 EndGlobal
