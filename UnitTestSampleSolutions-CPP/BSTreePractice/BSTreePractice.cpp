@@ -1,4 +1,5 @@
 
+#include <iostream>
 #include <string>
 using namespace std;
 
@@ -8,6 +9,15 @@ struct  Node
     Node* left;
     Node* right;
 };
+
+void PrintTree(Node* root)          //recursive function
+{
+    if(root==nullptr) return;       //checks if node is null and it returns to previous node
+
+    cout << root->data << endl;     //prints the data from the node
+    PrintTree(root->left);          //does the function for the left node
+    PrintTree(root->right);         //does the function for the right node 
+}
 
 Node* CreateNode(int data)
 {
