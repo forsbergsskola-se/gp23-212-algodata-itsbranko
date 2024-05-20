@@ -10,13 +10,31 @@ struct  Node
     Node* right;
 };
 
-void PrintTree(Node* root)          //recursive function
+void PrintTreePreorder(Node* root)          //recursive function
 {
-    if(root==nullptr) return;       //checks if node is null and it returns to previous node
+    if(root==nullptr) return;               //checks if node is null and it returns to previous node
 
-    cout << root->data << endl;     //prints the data from the node
-    PrintTree(root->left);          //does the function for the left node
-    PrintTree(root->right);         //does the function for the right node 
+    cout << root->data << ", ";             //prints the data from the node
+    PrintTreePreorder(root->left);          //does the function for the left node
+    PrintTreePreorder(root->right);         //does the function for the right node 
+}
+
+void PrintTreeInorder(Node* root)
+{
+    if (root == nullptr) return;
+
+    PrintTreeInorder(root->left);
+    cout << root->data << ", ";
+    PrintTreeInorder(root->right);
+}
+
+void PrintTreePostorder(Node* root)
+{
+    if (root == nullptr) return;
+
+    PrintTreePostorder(root->left);
+    PrintTreePostorder(root->right);
+    cout << root->data << ", ";
 }
 
 Node* CreateNode(int data)
@@ -26,6 +44,7 @@ Node* CreateNode(int data)
     newNode->left = newNode->right = nullptr;
     return newNode;
 }
+
 int main()
 {
     Node* root = CreateNode(1);
@@ -40,5 +59,12 @@ int main()
 
     root->left->right->left = CreateNode(9);
     root->right->right->left = CreateNode(15);
+
+    cout << "Preorder Algorithm:" << endl;
+    PrintTreePreorder(root); 
+    cout << "\nInorder Algorithm:" << endl;
+    PrintTreeInorder(root);
+    cout << "\nPostorder Algorithm:" << endl;
+    PrintTreePostorder(root);
     
 }
