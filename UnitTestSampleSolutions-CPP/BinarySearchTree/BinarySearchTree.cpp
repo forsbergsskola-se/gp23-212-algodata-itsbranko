@@ -13,6 +13,15 @@ int main()
     bst.Insert(10);
     bst.Insert(18);
 
+    std::cout << bst.root->data << std::endl;                       //7
+    std::cout << bst.root->left->data << std::endl;                 //3
+    std::cout << bst.root->right->data << std::endl;                //15
+    std::cout << bst.root->right->left->data << std::endl;          //9
+    std::cout << bst.root->right->right->data << std::endl;         //20
+    std::cout << bst.root->left->right->data << std::endl;          //7
+    std::cout << bst.root->right->left->right->data << std::endl;   //10
+    std::cout << bst.root->right->right->left->data << std::endl;   //18
+    
     bst.PrintTreeInorder(bst.root);     //Inorder search and print      EXPECT 3,7,7,9,10,15,18,20
 
     std::cout << "\n";
@@ -21,20 +30,21 @@ int main()
     bst.Search(18);     //True
     bst.Search(1);      //False
 
-    bst.Delete(10);     //True
-    bst.Delete(2);     //False
+    bst.Delete(9);      //True
+    bst.Delete(7);      //True          //HOW DO DELETE THE NODE WITH TE SAME VALUE AS ROOT?!?!?
+    bst.Delete(20);     //True
+    bst.Delete(2);      //False
     
-    
-
-    //std::cout << bst.root->data << std::endl;                       //7
-    //std::cout << bst.root->left->data << std::endl;                 //3
-    //std::cout << bst.root->right->data << std::endl;                //15
-    //std::cout << bst.root->right->left->data << std::endl;          //9
-    //std::cout << bst.root->right->right->data << std::endl;         //20
-    //std::cout << bst.root->left->right->data << std::endl;          //7
+    std::cout << bst.root->data << std::endl;                       //7
+    std::cout << bst.root->left->data << std::endl;                 //3
+    std::cout << bst.root->right->data << std::endl;                //15
+    std::cout << bst.root->right->left->data << std::endl;          //10
+    std::cout << bst.root->right->right->data << std::endl;         //18
+    std::cout << bst.root->left->right->data << std::endl;          //7
     //std::cout << bst.root->right->left->right->data << std::endl;   //10
     //std::cout << bst.root->right->right->left->data << std::endl;   //18
 
-    bst.PrintTreeInorder(bst.root);     //Inorder search and print after deleting       EXPECT 3,7,7,9,15,18,20
+
+    bst.PrintTreeInorder(bst.root);     //Inorder search and print after deleting       EXPECT 3,7,7,10,15,18
 }
 
