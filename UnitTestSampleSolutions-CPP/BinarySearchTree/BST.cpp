@@ -7,7 +7,10 @@ TreeNode::TreeNode(int x) //CreateNode function
     right = nullptr;
 }
 
-BST::BST() : root(nullptr) {}
+BST::BST()
+{
+    root = nullptr;
+}
 
 void BST::insert(int data)
 {
