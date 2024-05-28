@@ -1,6 +1,11 @@
 ﻿#include "BST.h"
 
-TreeNode::TreeNode(int x) : data(x), left(nullptr), right(nullptr) {} //CreateNode function
+TreeNode::TreeNode(int x) //CreateNode function
+{
+    data = x;
+    left = nullptr;
+    right = nullptr;
+}
 
 BST::BST() : root(nullptr) {}
 
@@ -16,7 +21,7 @@ TreeNode* BST::insertHelper(TreeNode* node, int data)
         return new TreeNode(data);
         }
     
-    if (data < node->data)
+    if (data < node->data) //checking if the value is less than a value of the node... if yes, the node
         {
         node->left = insertHelper(node->left, data);
         }
