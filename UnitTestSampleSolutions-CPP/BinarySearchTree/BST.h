@@ -16,9 +16,14 @@ public:
     TreeNode* root;
     
     BST();
-    void insert(int data);
+    void Insert(int data);
+    bool Search(int data);
+    bool Delete(int data);
+    void PrintTreeInorder(TreeNode* root);
 
 private:
-    TreeNode* insertHelper(TreeNode* node, int data);
+    TreeNode* InsertHelper(TreeNode* node, int data);
+    TreeNode* SearchHelper(TreeNode* node, int data);
+    TreeNode* DeleteHelper(TreeNode* node, int data);
 };
 
