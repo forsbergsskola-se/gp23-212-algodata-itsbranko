@@ -75,6 +75,11 @@ int main()
     std::cout << copyTree.root->right->right->data << std::endl;            //18
     
     copyTree.DeleteTree();
+
+    //EXPECTED DELETION --- 2,5,7,3,13,10,18,15,9
+                                                                //WHY?!  --- Ohh i got it... === Because of the smallest one in the right sub tree becomes the root!! OKAAY! 
+    //ACTUAL DELETION --- 9,10,13,15,18,3,5,7,2     
+    
 }
 
 /*
