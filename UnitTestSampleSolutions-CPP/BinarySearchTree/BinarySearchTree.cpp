@@ -32,7 +32,7 @@ int main()
     bst.Search(1);      //False
 
     bst.Delete(8);      //True
-    bst.Delete(7);      //True          //HOW DO DELETE THE NODE WITH TE SAME VALUE AS ROOT?!?!?
+    bst.Delete(7);      //True          //HOW TO DELETE THE NODE WITH TE SAME VALUE AS ROOT?!?!?
     bst.Delete(20);     //True
     bst.Delete(2);      //False
     
@@ -83,7 +83,7 @@ int main()
     std::vector<int> inOrder = copyTree.InOrder();
     for (auto data : inOrder)
     {
-        std::cout << data << " ";                               //EXPECT    2,3,5,7,9,10,13,15,18
+        std::cout << data << ", ";                               //EXPECT    2,3,5,7,9,10,13,15,18
     }
     
     std::cout << "\n";
@@ -91,7 +91,7 @@ int main()
     std::vector<int> reverseOrder = copyTree.ReverseOrder();
     for (auto data : reverseOrder)
     {
-        std::cout << data << " ";                               //EXPECT    18,15,13,10,9,7,3,2
+        std::cout << data << ", ";                               //EXPECT    18,15,13,10,9,7,3,2
     }
 
     std::cout << "\n";
