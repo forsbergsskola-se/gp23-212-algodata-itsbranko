@@ -25,5 +25,6 @@ private:
     TreeNode* InsertHelper(TreeNode* node, int data);
     TreeNode* SearchHelper(TreeNode* node, int data);
     TreeNode* DeleteHelper(TreeNode* node, int data);
+    TreeNode* findSmallestInTheSubtree(TreeNode* node);
 };
 

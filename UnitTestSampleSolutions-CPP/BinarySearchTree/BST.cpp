@@ -91,20 +91,33 @@ TreeNode* BST::DeleteHelper(TreeNode* node, int data)
         }
     
     else
-        {                                                       //from here
+        {
         if (node->left == nullptr)
             {
             TreeNode* temp = node->right;
             delete node;
             return temp;
-            }                                                   //NOT SURE ABOUT THIS ONE...
+            }
         else if (node->right == nullptr)
             {
             TreeNode* temp = node->left;
             delete node;
             return temp;
             }
-        }                                                       //to here
+        else
+            {
+            TreeNode* temp = findSmallestInTheSubtree(node->right);                      // Node with two children getting the smallest of the right subtree
+            node->data = temp->data;
+            node->right = DeleteHelper(node->right, temp->data);
+            }
+        }
+    return node;
+}
+TreeNode* BST::findSmallestInTheSubtree(TreeNode* node)
+{
+    while (node->left != nullptr) {
+        node = node->left;
+    }
     return node;
 }
 
