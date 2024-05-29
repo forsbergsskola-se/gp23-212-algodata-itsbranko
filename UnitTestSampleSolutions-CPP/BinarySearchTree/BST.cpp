@@ -113,7 +113,7 @@ TreeNode* BST::DeleteHelper(TreeNode* node, int data)
         }
     return node;
 }
-TreeNode* BST::findSmallestInTheSubtree(TreeNode* node)
+TreeNode* BST::findSmallestInTheSubtree(TreeNode* node)                 //Finding the smallest number in the subtree because we are gonna need it for deleting nodes with 2 children!!
 {
     while (node->left != nullptr) {
         node = node->left;
