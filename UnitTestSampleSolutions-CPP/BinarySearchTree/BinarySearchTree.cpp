@@ -109,11 +109,11 @@ int main()
 
     std::vector<int> inOrders = copyTree.Clone()->InOrder();
     for (auto data : inOrder)
-    {
+    {                                                           //THIS IS WEIRD ... It prints out the clone in order but will NOT delete it?!
         std::cout << data << " ";
     }
     
-    copyTree.Clone()->DeleteTree();
+    std::cout << copyTree.Clone()->root->data;                  //Also the roots data is null and well as the left and right node of it...?!?!??!
 
 }
 
