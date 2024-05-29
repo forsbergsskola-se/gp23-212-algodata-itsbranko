@@ -147,3 +147,19 @@ TreeNode* BST::InsertHelper(TreeNode* node, int data)                   //HELPER
         }
     return node;
 }
+
+BST* BST::Clone()
+{
+    BST* newTree = new BST();
+    newTree->root = CloneHelper(root);
+    return newTree;
+}
+TreeNode* BST::CloneHelper(TreeNode* node)
+{
+    if (node == nullptr) return nullptr;
+    
+    TreeNode* newNode = new TreeNode(node->data);
+    newNode->left = CloneHelper(node->left);
+    newNode->right = CloneHelper(node->right);
+    return newNode;
+}
