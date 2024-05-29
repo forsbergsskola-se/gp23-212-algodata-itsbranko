@@ -19,6 +19,7 @@ public:
     void Insert(int data);
     bool Search(int data);
     bool Delete(int data);
+    void DeleteTree();
     void PrintTreeInorder(TreeNode* root);
 
 private:

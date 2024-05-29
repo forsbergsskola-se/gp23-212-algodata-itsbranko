@@ -35,6 +35,14 @@ bool BST::Delete(int data)
     return false;
 }
 
+void BST::DeleteTree() {
+    while (root != nullptr) {
+        int rootData = root->data;
+        root = DeleteHelper(root, rootData);
+        std::cout << "Deleted node with data: " << rootData << std::endl;
+    }
+}
+
 void BST::PrintTreeInorder(TreeNode* root)   //Inorder
 {
     if (root == nullptr) return;

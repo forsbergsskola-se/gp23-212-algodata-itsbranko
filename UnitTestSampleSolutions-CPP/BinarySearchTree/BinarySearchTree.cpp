@@ -45,5 +45,46 @@ int main()
 
 
     bst.PrintTreeInorder(bst.root);     //Inorder search and print after deleting       EXPECT 3,7,9,10,15,18
+
+    std::cout << "\n";
+
+    
+//=============================================ANOTHER TREE=============================================================
+    BST copyTree = bst;
+
+    copyTree.Insert(13);
+    copyTree.Insert(2);
+    copyTree.Insert(5);
+
+    copyTree.PrintTreeInorder(copyTree.root);       //EXPECT 2,3,5,7,9,10,13,15,18
+
+    std::cout << "\n";
+    
+    copyTree.Search(7);
+    
+    std::cout << copyTree.root->data << std::endl;                          //9
+    
+    std::cout << copyTree.root->left->data << std::endl;                    //3
+    std::cout << copyTree.root->left->left->data << std::endl;              //2
+    std::cout << copyTree.root->left->right->data << std::endl;             //7
+    std::cout << copyTree.root->left->right->left->data << std::endl;       //5
+    
+    std::cout << copyTree.root->right->data << std::endl;                   //15
+    std::cout << copyTree.root->right->left->data << std::endl;             //10
+    std::cout << copyTree.root->right->left->right->data << std::endl;      //13
+    std::cout << copyTree.root->right->right->data << std::endl;            //18
+    
+    copyTree.DeleteTree();
 }
 
+/*
+
+              9
+           /     \
+          3      15
+        /  \    /   \
+       2   7   10    18
+          /     \
+         5      13
+         
+*/
