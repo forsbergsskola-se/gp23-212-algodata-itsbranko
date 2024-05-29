@@ -104,8 +104,14 @@ int main()
 
     
     copyTree.Clone()->Delete(2);                        
-    copyTree.Clone()->Delete(3);                            //NOT FINDING THESE... WHY? Is it because they are clones? 
+    copyTree.Clone()->Delete(3);                            //NOT FINDING THESE AFTER DELETING... WHY? Is it because they are clones? +++ Soo every time i use the Clone function its a new tree of the tree we just cloned from
     copyTree.Clone()->Delete(5);
+
+    std::vector<int> inOrders = copyTree.Clone()->InOrder();
+    for (auto data : inOrder)
+    {
+        std::cout << data << " ";
+    }
     
     copyTree.Clone()->DeleteTree();
 
