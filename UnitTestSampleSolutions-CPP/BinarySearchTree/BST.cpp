@@ -1,6 +1,7 @@
 ﻿#include "BST.h"
 
 #include <iostream>
+#include <vector>
 
 TreeNode::TreeNode(int x) //CreateNode function
 {
@@ -162,4 +163,34 @@ TreeNode* BST::CloneHelper(TreeNode* node)
     newNode->left = CloneHelper(node->left);
     newNode->right = CloneHelper(node->right);
     return newNode;
+}
+
+std::vector<int> BST::InOrder()
+{
+    std::vector<int> vec;
+    InOrderHelper(root, vec);
+    return vec;
+}
+
+void BST::InOrderHelper(TreeNode* node, std::vector<int>& vec)
+{
+    if (node == nullptr) return;
+    InOrderHelper(node->left, vec);
+    vec.push_back(node->data);
+    InOrderHelper(node->right, vec);
+}
+
+std::vector<int> BST::ReverseOrder()
+{
+    std::vector<int> vec;
+    ReverseOrderHelper(root, vec);
+    return vec;
+}
+
+void BST::ReverseOrderHelper(TreeNode* node, std::vector<int>& vec)
+{
+    if (node == nullptr) return;
+    ReverseOrderHelper(node->right, vec);
+    vec.push_back(node->data);
+    ReverseOrderHelper(node->left, vec);
 }

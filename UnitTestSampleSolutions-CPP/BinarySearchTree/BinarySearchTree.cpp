@@ -77,7 +77,25 @@ int main()
     copyTree.Clone();
     
     copyTree.PrintTreeInorder(copyTree.Clone()->root);
+    std::cout << "\n";
+    
 
+    std::vector<int> inOrder = copyTree.InOrder();
+    for (auto data : inOrder)
+    {
+        std::cout << data << " ";                               //EXPECT    2,3,5,7,9,10,13,15,18
+    }
+    
+    std::cout << "\n";
+
+    std::vector<int> reverseOrder = copyTree.ReverseOrder();
+    for (auto data : reverseOrder)
+    {
+        std::cout << data << " ";                               //EXPECT    18,15,13,10,9,7,3,2
+    }
+
+    std::cout << "\n";
+    
     copyTree.DeleteTree();
 
     copyTree.Clone()->Delete(2);
