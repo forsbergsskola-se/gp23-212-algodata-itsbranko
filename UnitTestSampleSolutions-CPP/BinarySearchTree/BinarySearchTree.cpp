@@ -49,7 +49,7 @@ int main()
     std::cout << "\n";
 
     
-    //=============================================ANOTHER TREE=============================================================
+    //=============================================ANOTHER TREE=========================================================
     BST copyTree = bst;
 
     copyTree.Insert(13);
@@ -74,14 +74,16 @@ int main()
     std::cout << copyTree.root->right->left->right->data << std::endl;      //13
     std::cout << copyTree.root->right->right->data << std::endl;            //18
 
-    copyTree.Clone();
     
-    copyTree.PrintTreeInorder(copyTree.Clone()->root);
-    std::cout << "\n REVERSE \n";
-    copyTree.PrintTreeReverseOrder(copyTree.Clone()->root);
+    //============================================= Cloning The Tree ===================================================
+    copyTree.Clone();                                                       //Clone is not Cloning LOL It's a new tree every time i use Clone....duuuh!! *facepalm*
+    
+    copyTree.PrintTreeInorder(copyTree.Clone()->root);                      //Prints in order
+    std::cout << "\n REVERSE \n";                                           
+    copyTree.PrintTreeReverseOrder(copyTree.Clone()->root);                 //Prints in reverse order
     std::cout << "\n";
 
-    //copyTree.DeleteTree();
+    //copyTree.DeleteTree();                                                //It works! 
     
     //EXPECTED DELETION --- 2,5,7,3,13,10,18,15,9
                                                                             //WHY?!  --- Ohh i got it... === Because of the smallest one in the right sub tree becomes the root!! OKAAY! 
@@ -89,14 +91,22 @@ int main()
 
    auto newTree = copyTree.Clone();
     newTree->Delete(9);
-    std::cout << newTree->root->data;                                       //Well it works... Finally!
+    std::cout << newTree->root->data;                                       //Well it works... Finally!   ---   EXPECTED 10
+    newTree->Delete(2);
+    newTree->Delete(3);
+    newTree->PrintTreeInorder(newTree->root);
+    std::cout << "\n REVERSE \n";
+    newTree->PrintTreeReverseOrder(newTree->root);
+    std::cout << "\n";
+
+    newTree->DeleteTree();
     
 }
     
 
 
 
-//=============== DID ALL OF THIS BELOW IN MUCH EASIER WAY - PrintTreeReverseOrder ======================================
+//=============== DID ALL OF THIS BELOW IN MUCH EASIER WAY - PrintTreeInorder & PrintTreeReverseOrder ======================================
 
     /*
     std::vector<int> inOrder = copyTree.InOrder();
