@@ -52,6 +52,14 @@ void BST::PrintTreeInorder(TreeNode* root)   //Inorder
     std::cout << root->data << ", ";
     PrintTreeInorder(root->right);
 }
+void BST::PrintTreeReverseOrder(TreeNode* root)   //Reverse Order
+{
+    if (root == nullptr) return;
+
+    PrintTreeReverseOrder(root->right);
+    std::cout << root->data << ", ";
+    PrintTreeReverseOrder(root->left);
+}
 
 TreeNode* BST::SearchHelper(TreeNode* node, int data)
 {
@@ -165,6 +173,7 @@ TreeNode* BST::CloneHelper(TreeNode* node)
     return newNode;
 }
 
+/*
 std::vector<int> BST::InOrder()
 {
     std::vector<int> vec;
@@ -194,3 +203,4 @@ void BST::ReverseOrderHelper(TreeNode* node, std::vector<int>& vec)
     vec.push_back(node->data);
     ReverseOrderHelper(node->left, vec);
 }
+*/

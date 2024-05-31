@@ -49,7 +49,7 @@ int main()
     std::cout << "\n";
 
     
-//=============================================ANOTHER TREE=============================================================
+    //=============================================ANOTHER TREE=============================================================
     BST copyTree = bst;
 
     copyTree.Insert(13);
@@ -77,9 +77,28 @@ int main()
     copyTree.Clone();
     
     copyTree.PrintTreeInorder(copyTree.Clone()->root);
+    std::cout << "\n REVERSE \n";
+    copyTree.PrintTreeReverseOrder(copyTree.Clone()->root);
     std::cout << "\n";
+
+    //copyTree.DeleteTree();
+    
+    //EXPECTED DELETION --- 2,5,7,3,13,10,18,15,9
+                                                                            //WHY?!  --- Ohh i got it... === Because of the smallest one in the right sub tree becomes the root!! OKAAY! 
+    //ACTUAL DELETION --- 9,10,13,15,18,3,5,7,2
+
+   auto newTree = copyTree.Clone();
+    newTree->Delete(9);
+    std::cout << newTree->root->data;                                       //Well it works... Finally!
+    
+}
     
 
+
+
+//=============== DID ALL OF THIS BELOW IN MUCH EASIER WAY - PrintTreeReverseOrder ======================================
+
+    /*
     std::vector<int> inOrder = copyTree.InOrder();
     for (auto data : inOrder)
     {
@@ -95,12 +114,6 @@ int main()
     }
 
     std::cout << "\n";
-    
-    copyTree.DeleteTree();
-
-    //EXPECTED DELETION --- 2,5,7,3,13,10,18,15,9
-                                                                //WHY?!  --- Ohh i got it... === Because of the smallest one in the right sub tree becomes the root!! OKAAY! 
-    //ACTUAL DELETION --- 9,10,13,15,18,3,5,7,2     
 
     
     copyTree.Clone()->Delete(2);                        
@@ -116,7 +129,8 @@ int main()
     std::cout << copyTree.Clone()->root->data;                  //Also the roots data is null and well as the left and right node of it...?!?!??!
 
 }
-
+*/
+    
 /*
 
               9

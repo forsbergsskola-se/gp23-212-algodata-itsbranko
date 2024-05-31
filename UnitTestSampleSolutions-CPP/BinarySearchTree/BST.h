@@ -21,11 +21,12 @@ public:
     bool Delete(int data);
     void DeleteTree();
     void PrintTreeInorder(TreeNode* root);
+    void PrintTreeReverseOrder(TreeNode* root);
 
     BST* Clone();
     
-    std::vector<int> ReverseOrder();
-    std::vector<int> InOrder();
+    //std::vector<int> ReverseOrder();
+    //std::vector<int> InOrder();
 
 private:
     TreeNode* InsertHelper(TreeNode* node, int data);
@@ -35,7 +36,7 @@ private:
     
     TreeNode* CloneHelper(TreeNode* node);
     
-    void InOrderHelper(TreeNode* node, std::vector<int>& vec);
-    void ReverseOrderHelper(TreeNode* node, std::vector<int>& vec);
+    //void InOrderHelper(TreeNode* node, std::vector<int>& vec);
+    //void ReverseOrderHelper(TreeNode* node, std::vector<int>& vec);
 };
 
